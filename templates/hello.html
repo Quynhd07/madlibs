@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
 <head>
-  <title>Hi There!</title>
+  <title>{% block title %}Hi There!{% endblock %}</title>
 </head>
 <body>
+    {% block contents %}
 
-<h1>Hi There!</h1>
+    <h1>Hi There!</h1>
 
-<form action="/greet">
-  What is your name? <input type="text" name="person">
-  <input type="submit">
-</form>
+    <form action="/greet">
+      What is your name? <input type="text" name="person">
+      <input type="submit">
+    </form>
 
+    {% endblock %}
 </body>
 </html>
