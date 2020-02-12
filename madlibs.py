@@ -36,7 +36,6 @@ def greet_person():
     player = request.args.get('person')
 
     compliments = sample(AWESOMENESS, randint(1, len(AWESOMENESS)))
-    print(compliments)
 
     # import pdb; pdb.set_trace()
 
@@ -54,12 +53,12 @@ def show_madlib_form():
         return render_template('goodbye.html')
 
 
-@app.route('/madlib')
+@app.route('/madlib', methods=['POST'])
 def show_madlib():
 
-    name = request.args.get('name')
-    color = request.args.get('color')
-    noun = request.args.get('noun')
+    name = request.form.get('name')
+    color = request.form.get('color')
+    noun = request.form.get('noun')
     adj = choice(AWESOMENESS)
     template = choice(['madlib.html', 'madlib2.html'])
 
