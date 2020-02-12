@@ -4,7 +4,20 @@
   <title>A Compliment</title>
 </head>
 <body>
-    Hi {{ person }}! I think you're {% for compliment in compliments %} {{compliment}} {% endfor %}!
+    Hi {{ person }}! I think you're 
+
+    {% for compliment in compliments %} 
+
+        {# {% if compliments|length == 1 %}
+        {{compliment}}! {% endif %} #}
+
+        {% if compliment != compliments[-1] %}
+            {{compliment}}, 
+
+        {% else %} {{compliment}}! {% endif %}
+
+
+    {% endfor %}
 
     <form action="/game">
         Do you want to play a game?
