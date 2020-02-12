@@ -1,0 +1,32 @@
+{% extends "hello.html" %}
+
+{% block title %}GAME TIME{% endblock %}
+
+{% block contents %}
+
+  <form action="/madlib">
+
+    <p>
+      What is your name?
+      <input type="text" name="name">
+    </p>
+    <p>
+      Choose color:
+      <select name="color">
+        <option value="coral">Coral</option>
+        <option value="olive">Olive</option>
+        <option value="lavender">lavender</option>
+        <option value="mint">Mint</option>
+      </select>
+    </p>
+    <p>
+      Select a noun:
+      <input type="radio" name="noun" value="tree">Tree
+      <input type="radio" name="noun" value="badger">Badger
+      <input type="radio" name="noun" value="target">Target HQ
+    </p>
+
+  <input type="submit">
+  </form>
+
+{% endblock %}
